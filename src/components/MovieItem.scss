@@ -1,0 +1,9 @@
+.MovieItem {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: purple;
+    }
+  }
+}

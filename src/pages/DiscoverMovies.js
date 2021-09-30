@@ -22,20 +22,17 @@ export default function DiscoverMovies() {
     const res = await axios.get(
       `http://www.omdbapi.com/?apikey=d3923321&s=${queryParameter}`
     );
-    console.log(res);
     set_state({ status: "done", data: res.data.Search });
   };
 
   return (
     <div>
       <h1>Discover Some Movies!</h1>
-      <p>
-        <input
-          value={searchText}
-          onChange={(event) => set_searchText(event.target.value)}
-        />
-        <button onClick={search}>Search</button>
-      </p>
+      <input
+        value={searchText}
+        onChange={(event) => set_searchText(event.target.value)}
+      />
+      <button onClick={search}>Search</button>
       {state.status === "idle" && (
         <p>Type in a search term and click 'Search' to start...</p>
       )}
